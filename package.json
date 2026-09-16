@@ -1,0 +1,35 @@
+{
+  "license": "MIT",
+  "name": "@agentruntime/youtube-transcript",
+  "version": "0.1.0",
+  "description": "YouTube caption boundary — panel + get_transcript MCP; yt-dlp direct captions, unicode sanitize, untrusted-data fence (no third-party transcript sites)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prestart": "npm run build:panel",
+    "start": "npx tsx src/index.ts",
+    "start:stdio": "npx tsx src/stdio.ts",
+    "dev": "node panel.build.js --watch & npx tsx watch src/index.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "build:panel": "node panel.build.js",
+    "build:panel:watch": "node panel.build.js --watch"
+  },
+  "dependencies": {
+    "@agentruntime/untrusted-fence": "file:../../dependencies/untrusted-fence",
+    "@helmetfire-labs/cartridge-common": "file:../../dependencies/cartridge-common",
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "esbuild": "^0.25.12",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.0.18"
+  }
+}
